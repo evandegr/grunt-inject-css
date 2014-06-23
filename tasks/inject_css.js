@@ -28,8 +28,9 @@ module.exports = function(grunt) {
 	}
 
 	expandedFiles.forEach(function (file) {
+		grunt.log.write('Preparing to inject css file');
 	    grunt.file.write(file.dest, grunt.file.read(file.src).replace('<!-- inject -->', '<style type="text/css">' + text + '</style>'));
-	    grunt.log.ok('File injected'.blue + ' into ' + file.dest);
+	    grunt.log.write('File injected'.blue + ' into ' + file.dest);
 	});
   });
 };
