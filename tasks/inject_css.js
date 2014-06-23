@@ -17,19 +17,10 @@ module.exports = function(grunt) {
 	var css = grunt.file.read(this.data.css);
 	var text = '';
 	var build_dest = this.data.build;
-	/*
-	if (css) {
-		css.forEach(function (script) {
-	        text += grunt.file.read(script);
-	    });
-	} else {
-		grunt.log.error('Please specify a file to inject into the html.');
-		return;
-	}
-	*/
 	
 	grunt.log.writeln('Preparing to inject css file');
 	grunt.file.write(build_dest, grunt.file.read(this.data.html).replace('<!-- inject -->', '<style type="text/css">' + css + '</style>'));
 	grunt.log.writeln('File injected'.blue + ' into ' + file.dest);
   });
+  
 };
