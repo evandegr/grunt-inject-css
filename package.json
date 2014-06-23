@@ -1,7 +1,7 @@
 {
   "name": "grunt-inject-css",
   "description": "Allows you to inject CSS into HTML files as part of the build process.",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "homepage": "https://github.com/evandegr/grunt-inject-css",
   "author": {
     "name": "Evan Vandegriff",
