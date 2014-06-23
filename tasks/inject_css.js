@@ -15,6 +15,7 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('inject_css', 'Allows you to inject CSS into HTML files as part of the build process.', function() {
 	var src = grunt.file.expand(this.data.src);
+	var expandedFiles = grunt.file.expand(this.data.files);
 	var text = '';
 
 	if (src) {
@@ -26,9 +27,9 @@ module.exports = function(grunt) {
 		return;
 	}
 
-	this.files.forEach(function (file) {
-		grunt.file.write(file.dest, grunt.file.read(file.src).replace('<!-- inject -->', '<style type="text/css">' + text + '</style>'));
-		grunt.log.ok('File injected'.blue + ' into ' + file.dest);
+	expandedFiles.forEach(function (file) {
+	    grunt.file.write(file.dest, grunt.file.read(file.src).replace('<!-- inject -->', '<style type="text/css">' + text + '</style>'));
+	    grunt.log.ok('File injected'.blue + ' into ' + file.dest);
 	});
   });
 };
