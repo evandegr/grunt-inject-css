@@ -19,8 +19,8 @@ module.exports = function(grunt) {
 	var text = '';
 	var build_dest = this.data.build;
 
-	if (src) {
-		src.forEach(function (script) {
+	if (css) {
+		css.forEach(function (script) {
 	        text += grunt.file.read(script);
 	    });
 	} else {
